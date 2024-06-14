@@ -1,0 +1,96 @@
+resource url?
+QUESTION ----------------
+Write a program to check if two strings are balanced. For example, strings s1 and s2 are balanced if all the characters in the s1 are present in s2. The character’s position doesn’t matter. If balanced display as "true" ,otherwise "false".
+------------------ANSWER
+s1=input()
+s2=input()
+if(s1 in  s2):
+    print('True')
+else:
+    print('False')
+------------------------------
+QUESTION ----------------
+Write a program that takes as input a
+string (sentence), and returns its second word in uppercase.
+------------------ANSWER
+s1=input()
+n=len(s1.split())
+if n>1:
+    s2=s1.split()[1]
+    print(s2.upper())
+else:
+    print('LESS')
+------------------------------
+QUESTION ----------------
+Given a string S, which contains
+several words, print the count C of the words whose length is atleast L. (You
+can include punctuation marks like comma, full stop also as part of the word
+length. Space alone must be ignored)
+------------------ANSWER
+s1=input()
+L=int(input())
+n=len(s1.split())
+c=0
+for i in range(0,n):
+    if(len(s1.split()[i])>=L):
+        c=c+1
+print(c)
+------------------------------
+QUESTION ----------------
+Given a string S which is of the format
+USERNAME@DOMAIN.EXTENSION, the program must print the EXTENSION, DOMAIN,
+USERNAME in the reverse order.
+------------------ANSWER
+s1=input()
+A1=s1.split('@')[0]
+s2=s1.split('@')[1]
+A2=s2.split('.')[0]
+A3=s2.split('.')[1]
+
+print(A3)
+print(A2)
+print(A1)
+------------------------------
+QUESTION ----------------
+String
+should contain only the words are not palindrome.
+------------------ANSWER
+s1=input()
+n=len(s1.split())
+l=''
+j=0
+for i in range(0,n):
+    if(s1.split()[i]==reversed(s1.split()[i])):
+        l=s1.replace(s1.split()[i],'')
+print(l)
+------------------------------
+QUESTION ----------------
+Reverse a string without affecting special characters Given a string S, containing special characters and all the alphabets, reverse the string without affecting the positions of the special characters.Input:   A&BOutput:  B&AExplanation:
+As we ignore '&' and As we ignore '&' and then reverse, so answer is "B&A".
+------------------ANSWER
+
+------------------------------
+QUESTION ----------------
+Assume
+that the given string has enough memory.
+------------------ANSWER
+
+------------------------------
+QUESTION ----------------
+Find if a
+String2 is substring of String1. If it is, return the index of the first
+occurrence. else return -1.
+------------------ANSWER
+
+------------------------------
+QUESTION ----------------
+In this exercise, you will create a program that reads words from the user until the user enters a blank line. After the user enters a blank line your program should display each word entered by the user exactly once. The words should be displayed in the same order that they were first entered. For example, if the user enters:
+------------------ANSWER
+
+------------------------------
+QUESTION ----------------
+Two string values S1, S2 are passed as the input. The program
+must print first N characters present in S1 which are also present in S2.
+------------------ANSWER
+
+------------------------------

@@ -1,0 +1,98 @@
+resource url?
+QUESTION ----------------
+Given an array of integers nums containing n + 1 integers where each integer is in the range [1, n] inclusive.There is only one repeated number in nums, return this repeated number. Solve the problem using set.Example 1:Input: nums = [1,3,4,2,2]Output: 2Example 2:Input: nums = [3,1,3,4,2]Output: 3
+------------------ANSWER
+l=input().split()
+list=[eval(i) for i in l]
+list.sort()
+for i in range(len(list)-1):
+    if list[i]==list[i+1]:
+        print(list[i])
+------------------------------
+QUESTION ----------------
+Write a program to eliminate the common elements in the given 2 arrays and print only the non-repeatingelements and the total number of such non-repeating elements.Input Format:The first line contains space-separated values, denoting the size of the two arrays in integer format respectively.The next two lines contain the space-separated integer arrays to be compared.Sample Input:5 41 2 8 6 52 6 8 10Sample Output:1 5 103Sample  Input: 5 51 2 3 4 51 2 3 4 5Sample Output:NO SUCH ELEMENTS
+------------------ANSWER
+l=input().split()
+l=list(l)
+il=[eval(i) for i in l]
+l1=input().split()
+l2=input().split()
+il1=[eval(i) for i in l1]
+il2=[eval(i) for i in l2]
+ill_set = set (il1)
+il2_set = set (il2)
+count=0
+il1d = list(ill_set - (ill_set & il2_set))
+il2d = list(il2_set - (ill_set & il2_set))
+it=il1d+il2d
+for i in range(len(it)):
+    print(it[i], end=" ")
+    count+=1
+print(end="\n")
+print(count)
+------------------------------
+QUESTION ----------------
+The DNA sequence is composed of a series of nucleotides abbreviated as 'A', 'C', 'G', and 'T'.For example, "ACGAATTCCG" is a DNA sequence.When studying DNA, it is useful to identify repeated sequences within the DNA.Given a string s that represents a DNA sequence, return all the 10-letter-long sequences (substrings) that occur more than once in a DNA molecule. You may return the answer in any order. Example 1:Input: s = "AAAAACCCCCAAAAACCCCCCAAAAAGGGTTT"
+Output: ["AAAAACCCCC","CCCCCAAAAA"]
+Example 2:Input: s = "AAAAAAAAAAAAA"
+Output: ["AAAAAAAAAA"]
+------------------ANSWER
+s=input()
+s_len=10
+if len(s)<=s_len:
+    result=""
+else:
+    s_count={}
+    for i in range(len(s) - s_len+1):
+        seq = s[i:i + s_len]
+        if seq in s_count:
+            s_count[seq] += 1
+        else:
+            s_count[seq] = 1
+    repeat_seq = [seq for seq, count in s_count.items() if count > 1]
+    result="\n".join(repeat_seq)
+print(result)
+------------------------------
+QUESTION ----------------
+Given an array of strings words, return the words that can be typed using letters of the alphabet on only one row of American keyboard like the image below.In the American keyboard:the first row consists of the characters "qwertyuiop",the second row consists of the characters "asdfghjkl", andthe third row consists of the characters "zxcvbnm". Example 1:Input: words = ["Hello","Alaska","Dad","Peace"]
+Output: ["Alaska","Dad"]
+Example 2:Input: words = ["omk"]
+Output: []
+Example 3:Input: words = ["adsdf","sfd"]
+Output: ["adsdf","sfd"]
+------------------ANSWER
+rows=["qwertyuiop", "asdfghjkl" ,"zxcvbnm"]
+n=int(input())
+words=[]
+for i in range(n):
+    word=input()
+    words.append(word)
+l=[]
+for word in words:
+    flag = False
+    for row in rows:
+        if all(char in rows for char in word.lower()):
+            flag = True
+            break
+    if flag:
+        l.append(word)
+if l:
+    for i in range(len(l)):
+        print(l[i])
+else:
+    print('No words')
+------------------------------
+QUESTION ----------------
+Coders here is a simple task for you, Given string str. Your task is to check whether it is a binary string or not by using python set.Examples:  Input: str = "01010101010"Output: YesInput: str = "REC101"Output: No
+------------------ANSWER
+a=input()
+for i in range(len(a)):
+    if a.isdigit():
+        flag=1
+    else:
+        flag=0
+if flag==1:
+    print("Yes")
+else:
+    print("No")
+------------------------------
